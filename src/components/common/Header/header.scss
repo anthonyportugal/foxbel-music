@@ -1,0 +1,19 @@
+.Header {
+  max-height: 5vh;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__user {
+    cursor: pointer;
+    h5 {
+      font-size: 1.25rem;
+      span {
+        margin-right: 1rem;
+        i {
+          color: var(--red-principal);
+        }
+      }
+    }
+  }
+}

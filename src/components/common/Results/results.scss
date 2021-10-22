@@ -1,6 +1,15 @@
 .Results {
-  display: grid;
-  gap: 1rem;
-  grid-auto-rows: 22rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  h3 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--red-principal);
+  }
+  &__container {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 15rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    overflow-y: scroll;
+    max-height: 50vh;
+  }
 }

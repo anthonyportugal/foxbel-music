@@ -23,6 +23,7 @@ ul {
 .Sidebar__title {
   font-size: 1.375rem;
   padding-bottom: 2rem;
+  font-weight: bold;
 }
 
 .Sidebar__link {
@@ -30,6 +31,7 @@ ul {
   color: #ffffff;
   font-size: 1rem;
   transition: all 0.15s;
+  font-weight: normal;
   &:hover {
     font-weight: bold;
   }

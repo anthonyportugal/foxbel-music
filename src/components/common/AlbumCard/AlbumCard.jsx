@@ -2,13 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './albumCard.scss'
 
-const AlbumCard = () => {
+const AlbumCard = ({ imgSrc, albumTitle, artistName }) => {
   return (
-
     <div className="AlbumCard">
-      <img src="" alt="album-card" />
-      <Link className="AlbumCard__album">AlbumTitle</Link>
-      <Link className="AlbumCard__artist">ArtistName</Link>
+      <img src={imgSrc} alt="album-card" />
+      <Link to='/' className="AlbumCard__album">{albumTitle}</Link>
+      <Link to='/' className="AlbumCard__artist">{artistName}</Link>
     </div>
   )
 }

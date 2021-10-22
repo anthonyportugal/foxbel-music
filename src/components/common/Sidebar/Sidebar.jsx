@@ -23,7 +23,7 @@ const Sidebar = () => {
 
               {val.items.map((val, key) => {
                 return (
-                  <li
+                  <p
                     key={key}
                     className='Sidebar__link'
                   >
@@ -33,7 +33,7 @@ const Sidebar = () => {
                     >
                       {val.title}
                     </Link>
-                  </li>
+                  </p>
                 )
               })}
             </li>

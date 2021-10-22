@@ -1,9 +1,12 @@
 import Routes from "./routes/Routes";
 import './index.css'
+import { DataProvider } from "./context/DataContext";
 
 function App() {
   return (
-    <Routes />
+    <DataProvider>
+      <Routes />
+    </DataProvider>
   );
 }
 
