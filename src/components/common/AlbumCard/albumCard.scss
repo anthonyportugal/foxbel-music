@@ -1,0 +1,29 @@
+.AlbumCard {
+  width: 10rem;
+  height: 14rem;
+  transition: all 0.25s;
+  &:hover {
+    transform: translate(+15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  img {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 0.5rem;
+  }
+  &__album{
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--gray);
+    text-decoration: none;
+    display: block;
+  }
+  &__artist{
+    font-size: 0.75rem;
+    color: var(--soft-gray);
+    text-decoration: none;
+    display: block;
+  }
+  
+}
