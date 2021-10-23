@@ -1,5 +1,5 @@
 import React from 'react'
-import { Fragment } from 'react'
+import AudioPlayer from '../common/AudioPlayer/AudioPlayer'
 import Header from '../common/Header/Header'
 import Sidebar from '../common/Sidebar/Sidebar'
 import './Layout.scss'
@@ -12,6 +12,7 @@ const Layout = ({ children }) => {
         <Header />
         {children}
       </div>
+      <AudioPlayer />
     </>
   )
 }

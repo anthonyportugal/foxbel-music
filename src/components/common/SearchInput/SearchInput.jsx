@@ -6,7 +6,7 @@ import { Api } from '../../../consts/index'
 
 const SearchInput = () => {
   // IMPORT CONTEXT
-  const { setMusic, setArtist } = useContext(MusicContext)
+  const { setMusic/* , setArtist  */ } = useContext(MusicContext)
   // SEARCH INPUT
   const [searchText, setSearchText] = useState('')
   const searchMusic = e => {

@@ -3,27 +3,18 @@ import { MusicContext } from '../../../context/DataContext'
 import './cover.scss'
 
 const Cover = () => {
-  const { music/* , artist  */ } = useContext(MusicContext)
-
-  // const validate = async () => {
-  //   if (await artist?.error) {
-  //     return false
-  //   } else {
-  //     return true
-  //   }
-  // }
+  const { music } = useContext(MusicContext)
 
   return (
     <div className="Cover">
       <div className="Cover__img">
-        <img src={/* validate ? artist?.picture_big :  */music[0]?.artist.picture_big} alt="cover" />
+        <img src={music[0]?.artist.picture_big} alt="cover" />
       </div>
       <div className="Cover__content">
         <div className="Cover__details">
-          <h3>{/* validate ? artist?.name :  */music[0]?.artist.name}</h3>
-          <p>Lo mejor de {/* validate ? artist?.name :  */music[0]?.artist.name} <span>Cantidad Seguidores</span> </p>
-          <br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni alias voluptatibus ad! Iste in deserunt.</p>
+          <h3>{music[0]?.artist.name}</h3>
+          <p>Lo mejor de {music[0]?.artist.name} <span>84 423 Seguidores</span> </p>
+          <p>Disfruta lo mejor de la música con Fosbel Music.</p>
           <button className="Cover__btn-filled">Reproducir</button>
           <button className="Cover__btn-outline">Seguir</button>
         </div>

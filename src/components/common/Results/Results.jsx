@@ -8,11 +8,6 @@ const Results = () => {
 
   return (
     <div className="Results">
-      {/* <AlbumCard className="Results__item" />
-      <AlbumCard className="Results__item" />
-      <AlbumCard className="Results__item" />
-      <AlbumCard className="Results__item" />
-      <AlbumCard className="Results__item" /> */}
       <h3>Resultados</h3>
       <div className="Results__container">
         {music?.map((item, key) => {
@@ -20,9 +15,7 @@ const Results = () => {
             <AlbumCard
               key={key}
               className="Results__item"
-              imgSrc={item.album.cover_medium}
-              albumTitle={item.album.title}
-              artistName={item.artist.name}
+              item={item}
             />
           )
         })}
