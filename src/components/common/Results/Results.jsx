@@ -9,6 +9,9 @@ const Results = () => {
   return (
     <div className="Results">
       <h3>Resultados</h3>
+      <div id="loader" className="Results__loader hidden">
+        <div></div><div></div><div></div><div></div>
+      </div>
       <div className="Results__container">
         {music?.map((item, key) => {
           return (

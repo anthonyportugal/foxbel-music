@@ -14,7 +14,7 @@ export const DataProvider = ({ children }) => {
       audio.pause()
     }
   }
-  const toggleClassCss = () => {
+  const toggleClassCssPlayButton = () => {
     const playPauseButton = document.getElementById('play-pause-button');
     if (playPauseButton.classList.contains('fa-play-circle')) {
       playPauseButton.classList.remove('fa-play-circle')
@@ -27,6 +27,22 @@ export const DataProvider = ({ children }) => {
   const chargeSong = async (link) => {
     setAudio(new Audio(link))
   }
+  const toggleClassCssVolume = (volumeValue) => {
+    const volumeIcon = document.getElementById('volume-icon')
+    if (volumeValue > 80) {
+      volumeIcon.classList.remove('fa-volume-off')
+      volumeIcon.classList.remove('fa-volume-down')
+      volumeIcon.classList.add('fa-volume-up')
+    } else if (volumeValue > 0 && volumeValue < 80) {
+      volumeIcon.classList.remove('fa-volume-off')
+      volumeIcon.classList.add('fa-volume-down')
+      volumeIcon.classList.remove('fa-volume-up')
+    } else if (volumeValue == 0) {
+      volumeIcon.classList.add('fa-volume-off')
+      volumeIcon.classList.remove('fa-volume-down')
+      volumeIcon.classList.remove('fa-volume-up')
+    }
+  }
 
   return (
     <MusicContext.Provider
@@ -38,7 +54,8 @@ export const DataProvider = ({ children }) => {
         togglePlayPause,
         selectedMusic,
         setSelectedMusic,
-        toggleClassCss
+        toggleClassCssPlayButton,
+        toggleClassCssVolume
       }}
     >
       {children}

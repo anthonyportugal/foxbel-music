@@ -15,6 +15,7 @@
       width: 6.25rem;
       height: 6.25rem;
       margin: 0.2rem 1rem 0 0;
+      object-fit: cover;
     }
     p {
       font-size: 0.75rem;
@@ -66,8 +67,24 @@
     input {
       cursor: pointer;
       margin-right: 0.5rem;
+      &[type='range'] {
+        overflow: hidden;
+        width: 8rem;
+        -webkit-appearance: none;
+        background-color: gray;
+        border-radius: 5rem;
+      }
+    
+      &[type='range']::-webkit-slider-thumb {
+        width: 10px;
+        -webkit-appearance: none;
+        height: 10px;
+        background: #ffffff;
+        box-shadow: -80px 0 0 80px #ffffff;
+        border-radius: 1rem;
+      }
     }
-    .fa-volume-off {
+    .fa-volume-off, .fa-volume-down, .fa-volume-up {
       font-size: 2rem;
       color: #ffffff;
     }

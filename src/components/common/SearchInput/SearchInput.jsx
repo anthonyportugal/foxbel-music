@@ -5,39 +5,24 @@ import './searchInput.scss'
 import { Api } from '../../../consts/index'
 
 const SearchInput = () => {
-  // IMPORT CONTEXT
-  const { setMusic/* , setArtist  */ } = useContext(MusicContext)
-  // SEARCH INPUT
+  const { setMusic } = useContext(MusicContext)
+
   const [searchText, setSearchText] = useState('')
   const searchMusic = e => {
     setSearchText(e.target.value)
   }
 
-  // SEARCH ON DEEZER API
   async function searchOnDeezer() {
     try {
+      document.getElementById('loader').classList.remove('hidden')
       const data = await axios.get(`${Api.urlWithCorsProxy}/search?q=${searchText}`)
       setMusic(data?.data.data)
-      console.log(data);
+      document.getElementById('loader').classList.add('hidden')
+      // console.log(data);
     } catch (e) {
       console.error(e);
     }
   }
-
-  // async function searchArtistOnDeezer() {
-  //   try {
-  //     const data = await axios.get(`${Api.urlWithCorsProxy}/artist/${searchText}`)
-  //     setArtist(data?.data)
-  //     console.log(data);
-  //   } catch (e) {
-  //     console.error(e)
-  //   }
-  // }
-
-  // function searchMusicAndArtist() {
-  //   searchOnDeezer()
-  //   searchArtistOnDeezer()
-  // }
 
   return (
     <div className="Search">

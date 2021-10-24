@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { MusicContext } from '../../../context/DataContext'
 import './cover.scss'
+import foxbelMusicIcon from '../../../assets/foxbel-music-icon.png'
 
 const Cover = () => {
   const { music } = useContext(MusicContext)
@@ -8,7 +9,7 @@ const Cover = () => {
   return (
     <div className="Cover">
       <div className="Cover__img">
-        <img src={music[0]?.artist.picture_big} alt="cover" />
+        <img src={music[0]?.artist.picture_big || foxbelMusicIcon} alt="cover" />
       </div>
       <div className="Cover__content">
         <div className="Cover__details">

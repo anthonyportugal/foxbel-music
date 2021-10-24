@@ -1,30 +1,32 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { MusicContext } from '../../../context/DataContext'
 import './audioPlayer.scss'
+import foxbelMusicWhiteIcon from '../../../assets/foxbel-music-white-icon.png'
 
 const AudioPlayer = () => {
   const {
     togglePlayPause,
     selectedMusic,
-    toggleClassCss
+    toggleClassCssPlayButton,
+    audio,
+    toggleClassCssVolume
   } = useContext(MusicContext)
 
   const togglePlayPauseWithClassCss = () => {
-    toggleClassCss()
+    toggleClassCssPlayButton()
     togglePlayPause()
   }
 
-  const [volume, setVolume] = useState(50)
   const changeVolume = (e) => {
-    setVolume(e.target.value)
-    console.log(volume);
+    audio.volume = e.target.value / 100
+    toggleClassCssVolume(e.target.value)
   }
 
   return (
     <div className="AudioPlayer">
       <div className="AudioPlayer__cover">
         <div>
-          <img src={selectedMusic?.album.cover_medium} alt="cover" />
+          <img src={selectedMusic?.album.cover_medium || foxbelMusicWhiteIcon} alt="cover" />
         </div>
         <div>
           <p>{selectedMusic?.title}</p>
@@ -55,14 +57,12 @@ const AudioPlayer = () => {
             min="0"
             max="100"
             step="1"
-            // value={volume}
-            defaultValue={volume}
-            // onChange={() => changeVolume}
-            onMouseUp={() => changeVolume}
+            defaultValue={100}
+            onChangeCapture={changeVolume}
           />
         </div>
         <div>
-          <i className="fas fa-volume-off"></i>
+          <i id="volume-icon" className="fas fa-volume-up"></i>
         </div>
       </div>
     </div>

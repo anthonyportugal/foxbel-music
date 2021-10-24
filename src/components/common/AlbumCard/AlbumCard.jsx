@@ -8,20 +8,13 @@ const AlbumCard = ({ item }) => {
     audio,
     chargeSong,
     setSelectedMusic,
-    toggleClassCss
+    toggleClassCssPlayButton
   } = useContext(MusicContext)
 
   const selectSong = async (songLink) => {
-    audio.autoplay = true
-    console.log(songLink);
-    console.log(audio);
-    console.log(audio.readyState);
-    console.log(audio.autoplay);
-    console.log(audio.volume);
-    console.log(audio.paused);
     if (audio.paused === false) {
       audio.pause()
-      toggleClassCss()
+      toggleClassCssPlayButton()
     }
     await chargeSong(songLink)
     await setSelectedMusic(item)
