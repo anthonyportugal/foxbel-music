@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# FOXBEL MUSIC
+Music player with Deezer API. Made for FrontEnd Developer technical test.
+
+# 
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
